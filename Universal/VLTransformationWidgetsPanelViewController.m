@@ -101,7 +101,6 @@
                  index:(NSInteger)index
          dropOperation:(NSCollectionViewDropOperation)dropOperation
 {
-    NSLog(@"DnD ....");
     return YES;
 }
 
@@ -118,8 +117,6 @@
     
     [pasteboard declareTypes:[NSArray arrayWithObject:NSStringPboardType]  owner:self];
     [pasteboard setString:@"Test data" forType:NSStringPboardType];
-    
-    NSLog(@"yo mama ...");
     return YES;
 }
 
