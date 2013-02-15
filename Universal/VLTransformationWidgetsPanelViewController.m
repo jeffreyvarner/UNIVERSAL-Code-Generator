@@ -92,8 +92,6 @@
                   withEvent:(NSEvent *)event
                      offset:(NSPointPointer)dragImageOffset
 {
-    
-    NSLog(@"WTF....");
     NSString *tmpString = [[NSBundle mainBundle] pathForResource:@"Transmit-256" ofType:@"icns"];
     NSImage *myImage = [[[NSImage alloc] initWithContentsOfFile:tmpString] autorelease];
     return myImage;
