@@ -85,7 +85,6 @@
 
 - (BOOL)collectionView:(NSCollectionView *)collectionView canDragItemsAtIndexes:(NSIndexSet *)indexes withEvent:(NSEvent *)event
 {
-    NSLog(@"DnD ....man that is a giant rack");
     return YES;
 }
 
