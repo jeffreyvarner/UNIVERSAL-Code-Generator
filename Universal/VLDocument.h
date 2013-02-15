@@ -8,6 +8,30 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface VLDocument : NSPersistentDocument
+@class VLTransformationWidgetsPanelViewController;
+@class VLUniversalConsoleViewController;
+@class VLTransformationCanvasViewController;
+
+@interface VLDocument : NSPersistentDocument<NSSplitViewDelegate>
+{
+    @private
+    NSSegmentedControl *_mySegmentedControl;
+    NSSplitView *_myVerticalSplitView;
+    NSSplitView *_myHorizontalSplitView;
+    NSView *_myLeftPanelView;
+    NSView *_myBottomPanelView;
+    NSView *_myMainPanelView;
+    NSWindow *_myWindow;
+    
+    // Left panel view controller -
+    VLTransformationWidgetsPanelViewController *_myWidgetPanelViewController;
+    VLUniversalConsoleViewController *_myConsolePanelViewController;
+    VLTransformationCanvasViewController *_myTransformationCanvasViewController;
+    
+    // initialize -
+    BOOL _didFinishInitializing;
+}
+
+
 
 @end

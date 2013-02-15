@@ -4,4 +4,10 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+
+    // global application imports
+    #import "VLCoreUtilitiesLib.h"
+    #import "VLCodeGenerationEngine.h"
+
 #endif
