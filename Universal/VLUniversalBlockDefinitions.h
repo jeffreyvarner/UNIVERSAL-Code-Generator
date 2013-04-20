@@ -12,3 +12,10 @@
 // define blocks -
 typedef void (^MyVarnerlabCodeGenerationOperationBlock)(void);
 typedef void (^MyVarnerlabCodeGenerationOperationCompletionBlock)(void);
+
+
+// keys -
+FOUNDATION_EXPORT NSString *const kVLDefaultTransformationWidgetTree;
+
+// path/file constants -
+FOUNDATION_EXPORT NSString *const DEFAULT_WIDGET_TREE_FILE;

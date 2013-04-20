@@ -7,3 +7,10 @@
 //
 
 #import "VLUniversalBlockDefinitions.h"
+
+
+// keys -
+NSString *const kVLDefaultTransformationWidgetTree = @"kVLDefaultTransformationWidgetTree";
+
+// file/path constants -
+NSString *const DEFAULT_WIDGET_TREE_FILE = @"WidgetLibrary_v1";

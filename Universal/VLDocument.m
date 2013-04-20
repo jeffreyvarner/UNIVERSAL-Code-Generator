@@ -33,6 +33,9 @@
 @property (retain) VLUniversalConsoleViewController *myConsolePanelViewController;
 @property (retain) VLTransformationCanvasViewController *myTransformationCanvasViewController;
 
+// services -
+-(void)setupMyServices;
+
 // setup controls -
 -(void)setupWindowSegmentControl;
 -(IBAction)mySegmentedControlWasSelected:(NSSegmentedControl *)segmentedControl;
@@ -105,6 +108,9 @@
         // setup the splitviews -
         [self setupSplitViews];
         
+        // setup services -
+        [self setupMyServices];
+        
         // build the panel view controllers -
         NSView *widget_view = [self buildTransformationWidgetViewController];
         NSView *canvas_view = [self buildTransformationCanvasViewController];
@@ -126,6 +132,11 @@
     return YES;
 }
 
+#pragma mark - actions
+-(IBAction)myUniversalCodeGenerationButtonWasPushedAction:(NSButton *)button
+{
+    
+}
 
 #pragma mark - splitview delegate methods
 - (void)splitViewDidResizeSubviews:(NSNotification *)aNotification
@@ -521,6 +532,13 @@
     [NSAnimationContext runAnimationGroup:MyVarnerlabNSAnimationBlock
                         completionHandler:MyVarnerlabCompletionHandler];
 
+}
+
+#pragma mark - services
+-(void)setupMyServices
+{
+    // build the tree manager -
+    [VLXMLTreeManager sharedManager];
 }
 
 #pragma mark - setup controls

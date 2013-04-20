@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface VLXMLTreeManager : NSObject
 {
-    
+    @private
+    NSMutableDictionary *_myWidgetTreeDictionary;
 }
 
 // methods
 +(VLXMLTreeManager *)sharedManager;
 +(void)shutdownSharedManager;
+
+// methods to query trees in my collection
+-(NSArray *)queryTree:(NSString *)treeKey withXPath:(NSString *)xpath;
+
 
 @end

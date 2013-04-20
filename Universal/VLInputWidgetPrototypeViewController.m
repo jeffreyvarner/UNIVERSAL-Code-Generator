@@ -7,6 +7,7 @@
 //
 
 #import "VLInputWidgetPrototypeViewController.h"
+#import "VLMyInputWidgetDataModel.h"
 
 @interface VLInputWidgetPrototypeViewController ()
 
@@ -17,6 +18,7 @@
 
 // private props -
 @property (retain) NSEvent *myMouseDownEvent;
+@property (retain) IBOutlet NSTextField *myWidgetTitleLabel;
 
 @end
 
@@ -25,6 +27,7 @@
 // synthesize -
 @synthesize myMouseDownEvent = _myMouseDownEvent;
 @synthesize myToolWidgetContext = _myToolWidgetContext;
+@synthesize myWidgetTitleLabel = _myWidgetTitleLabel;
 
 // Generic factory method -
 +(NSViewController *)buildViewController
@@ -61,6 +64,15 @@
     [[[self view] layer] setBorderWidth:1.0f];
     [[[self view] layer] setBorderColor:[[NSColor blackColor] CGColor]];
     [[[self view] layer] setCornerRadius:5.0f];
+    
+    // set the title -
+    if ([self representedObject]!=nil)
+    {
+        // populate my text -
+        VLMyInputWidgetDataModel *dataModel = (VLMyInputWidgetDataModel *)[self representedObject];
+        NSString *title_string = [dataModel getMyWidgetTitle];
+        [[self myWidgetTitleLabel] setStringValue:title_string];
+    }
 }
 
 #pragma mark - drag source protocal methods
@@ -112,6 +124,7 @@
 {
     // Clean my iVars -
     self.myMouseDownEvent = nil;
+    self.myWidgetTitleLabel = nil;
     
     // Remove me from the NSNotificationCenter -
     [[NSNotificationCenter defaultCenter] removeObserver:self];

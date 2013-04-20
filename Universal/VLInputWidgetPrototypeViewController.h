@@ -13,11 +13,14 @@ typedef enum {
     VLUniversalToolWidgetContextCanvas
 } VLUniversalToolWidgetContext;
 
+@class VLMyInputWidgetDataModel;
+
 @interface VLInputWidgetPrototypeViewController : NSCollectionViewItem
 {
     @private
     NSEvent *_myMouseDownEvent;
     VLUniversalToolWidgetContext _myToolWidgetContext;
+    NSTextField *_myWidgetTitleLabel;
 }
 
 // properties -

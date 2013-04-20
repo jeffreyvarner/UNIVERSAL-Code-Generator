@@ -138,19 +138,26 @@
     // build the content array -
     if ([self myCollectionViewDataArray]==nil)
     {
+        // build empty array -
         self.myCollectionViewDataArray = [NSMutableArray array];
         
-        // build some dummy objects -
-        VLMyInputWidgetDataModel *widget_1 = [[[VLMyInputWidgetDataModel alloc] init] autorelease];
-        VLMyInputWidgetDataModel *widget_2 = [[[VLMyInputWidgetDataModel alloc] init] autorelease];
-        VLMyInputWidgetDataModel *widget_3 = [[[VLMyInputWidgetDataModel alloc] init] autorelease];
-        VLMyInputWidgetDataModel *widget_4 = [[[VLMyInputWidgetDataModel alloc] init] autorelease];
-        
-        // add to the array -
-        [[self myCollectionViewDataArray] addObject:widget_1];
-        [[self myCollectionViewDataArray] addObject:widget_2];
-        [[self myCollectionViewDataArray] addObject:widget_3];
-        [[self myCollectionViewDataArray] addObject:widget_4];
+        // Get the default widgets -
+        NSString *xpath = @".//listOfWidgets/Widget";
+        NSArray *defaultWidgetsArray = [[VLXMLTreeManager sharedManager] queryTree:kVLDefaultTransformationWidgetTree withXPath:xpath];
+        for (NSXMLElement *nodeElement in defaultWidgetsArray)
+        {
+            // build model - 
+            VLMyInputWidgetDataModel *widget_model = [[VLMyInputWidgetDataModel alloc] init];
+            
+            // configure
+            [widget_model setMyWidgetNode:nodeElement];
+            
+            // add -
+            [[self myCollectionViewDataArray] addObject:widget_model];
+            
+            // release -
+            [widget_model release];
+        }
         
         // ok, add to this content to the collection -
         [[self myInputCollectionView] setContent:[self myCollectionViewDataArray]];

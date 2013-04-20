@@ -10,6 +10,7 @@
     #import "VLUniversalBlockDefinitions.h"
     #import "VLCoreUtilitiesLib.h"
     #import "VLCodeGenerationEngine.h"
+    #import "VLXMLTreeManager.h"
 
 
 #endif

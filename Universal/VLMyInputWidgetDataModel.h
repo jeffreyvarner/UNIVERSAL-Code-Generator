@@ -10,9 +10,15 @@
 
 @interface VLMyInputWidgetDataModel : NSObject
 {
-    
+    @private
+    NSXMLElement *_myWidgetNode;
 }
 
+// public properties -
+@property (retain) NSXMLElement *myWidgetNode;
+
+// methods to get data for the widget prototype -
+-(NSString *)getMyWidgetTitle;
 
 
 @end

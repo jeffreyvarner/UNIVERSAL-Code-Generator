@@ -40,7 +40,7 @@
 
 -(void)releaseMyOperationBlock
 {
-    
+    Block_release([self myOperationBlock]);
 }
 
 -(void)dealloc
