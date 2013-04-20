@@ -7,7 +7,9 @@
 
 
     // global application imports
+    #import "VLUniversalBlockDefinitions.h"
     #import "VLCoreUtilitiesLib.h"
     #import "VLCodeGenerationEngine.h"
+
 
 #endif

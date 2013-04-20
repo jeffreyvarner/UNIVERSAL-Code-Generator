@@ -118,7 +118,6 @@
         // ok, we are done -
         _didFinishInitializing = YES;
     }
-
 }
 
 

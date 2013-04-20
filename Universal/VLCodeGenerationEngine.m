@@ -135,7 +135,6 @@ static VLCodeGenerationEngine *_sharedInstance;
     
     // release the operation -
     [operationObject release];
-    
 }
 
 -(void)performSingleOperationWithBlock:(MyVarnerlabCodeGenerationOperationBlock)operation

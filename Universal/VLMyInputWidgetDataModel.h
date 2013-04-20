@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface VLMyInputWidgetDataModel : NSObject
+{
+    
+}
+
+
 
 @end

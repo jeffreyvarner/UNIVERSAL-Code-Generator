@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Library version="1.0">
+	<listOfWidgets>
+		
+		<Widget name="READ_VFF">
+			<listOfWidgetProperties>
+				<property name="WIDGET_IMAGE" value=""/>
+				<property name="WIDGET_LABEL_TEXT" value=""/>
+				<property name="WIDGET_INPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_OUTPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_TRANSFORMATION_CLASS" value=""/>
+			</listOfWidgetProperties>
+			
+			<listOfTransformationProperties>
+				<TransformationProperty name="PATH">
+					<property name="TRANSFORMATION_PROPERTY_CELL_LABEL_TEXT" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_IMAGE" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_CLASS" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_DEFAULT_VALUE" value=""/>
+				</TransformationProperty>
+			</listOfTransformationProperties>
+			
+			<listOfTransformationPartners>
+				<listOfInputPartners>
+				</listOfInputPartners>
+				
+				<listOfOutputPartners>
+					<WidgetReference name="WRITE_VFF"/>
+					<WidgetReference name="WRITE_SBML"/>
+					<WidgetReference name="FILTER_REORDER_SPECIES"/>
+					<WidgetReference name="FILTER_REORDER_RATES"/>
+				</listOfOutputPartners>
+			</listOfTransformationPartners>
+		</Widget>
+		
+		<Widget name="READ_SBML">	
+			<listOfWidgetProperties>
+				<property name="WIDGET_IMAGE" value=""/>
+				<property name="WIDGET_LABEL_TEXT" value=""/>
+				<property name="WIDGET_INPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_OUTPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_TRANSFORMATION_CLASS" value=""/>
+			</listOfWidgetProperties>
+			
+			<listOfTransformationProperties>
+				<TransformationProperty name="PATH">
+					<property name="TRANSFORMATION_PROPERTY_CELL_LABEL_TEXT" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_IMAGE" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_CLASS" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_DEFAULT_VALUE" value=""/>
+				</TransformationProperty>
+			</listOfTransformationProperties>
+			
+			<listOfTransformationPartners>
+				
+				<listOfInputPartners>
+				</listOfInputPartners>
+				
+				<listOfOutputPartners>
+					<WidgetReference name="WRITE_VFF"/>
+					<WidgetReference name="WRITE_SBML"/>
+					<WidgetReference name="FILTER_REORDER_SPECIES"/>
+					<WidgetReference name="FILTER_REORDER_RATES"/>
+					<WidgetReference name="FILTER_INSERTVALUES_INITIALCONDITIONS"/>
+					<WidgetReference name="FILTER_INSERTVALUES_RATESCONSTANTS"/>
+
+					<WidgetReference name="WRITE_NETWORKVISUALIZATION_DOT"/>
+					
+					<WidgetReference name="WRITE_STOICHIOMETRIC_MATRIX"/>
+					<WidgetReference name="WRITE_REACTION_BOUNDS_MATLAB_M"/>
+					<WidgetReference name="WRITE_REACTION_BOUNDS_OCATVE_M"/>
+					<WidgetReference name="WRITE_FBACOMPUTATION_OCATVE_M"/>
+					<WidgetReference name="WRITE_FBACOMPUTATION_MATLAB_M"/>
+					
+					<WidgetReference name="WRITE_MASSACTIONKINTICS_OCATVE_M"/>
+					<WidgetReference name="WRITE_MASSACTIONKINTICS_OCATVE_C"/>
+					<WidgetReference name="WRITE_MASSACTIONKINTICS_MATLAB_M"/>
+					<WidgetReference name="WRITE_MASSACTIONKINTICS_GSL_C"/>
+					<WidgetReference name="WRITE_MASSACTIONKINTICS_SUNDIALS_C"/>
+					
+				</listOfOutputPartners>
+				
+			</listOfTransformationPartners>
+			
+		</Widget>
+		
+	</listOfWidgets>
+<Library>

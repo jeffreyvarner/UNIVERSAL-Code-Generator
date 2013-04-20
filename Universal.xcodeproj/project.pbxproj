@@ -14,10 +14,15 @@
 		AD11D00016CD856B0050D18C /* VLTransformCanvasWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD11CFFE16CD856B0050D18C /* VLTransformCanvasWidgetViewController.m */; };
 		AD11D00116CD856B0050D18C /* VLTransformCanvasWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD11CFFF16CD856B0050D18C /* VLTransformCanvasWidgetViewController.xib */; };
 		AD11D00416CD85B60050D18C /* VLTransformCanvasWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD11D00316CD85B60050D18C /* VLTransformCanvasWidgetView.m */; };
+		AD16B3981722B33900042CC5 /* VLUniversalBlockDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD16B3971722B33900042CC5 /* VLUniversalBlockDefinitions.m */; };
+		AD2765B416D022FE0027A2A4 /* WidgetLibrary_v1.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD2765B316D022FE0027A2A4 /* WidgetLibrary_v1.xml */; };
+		AD2765BB16D0253B0027A2A4 /* VLXMLTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2765BA16D0253B0027A2A4 /* VLXMLTreeManager.m */; };
 		AD32E17F16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD32E17D16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.m */; };
 		AD32E18016CC71F100E830D3 /* VLInputWidgetPrototypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD32E17E16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.xib */; };
 		AD32E18316CC768700E830D3 /* VLMyInputWidgetDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD32E18216CC768700E830D3 /* VLMyInputWidgetDataModel.m */; };
 		AD38729C16CCA0BF001A1006 /* Transmit-256.icns in Resources */ = {isa = PBXBuildFile; fileRef = AD38729B16CCA0BF001A1006 /* Transmit-256.icns */; };
+		AD78D5E816CED5AF002AADEB /* VLDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78D5E716CED5AF002AADEB /* VLDatabaseManager.m */; };
+		AD78D5E916CEDCD3002AADEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE233CE16BC79C40034E15D /* CoreData.framework */; };
 		AD8CB8EE16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8CB8EC16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.m */; };
 		AD8CB8EF16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8CB8ED16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib */; };
 		ADAFEEFC16CC3C74008E2C19 /* VLUniversalConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAFEEFA16CC3C74008E2C19 /* VLUniversalConsoleViewController.m */; };
@@ -48,12 +53,19 @@
 		AD11CFFF16CD856B0050D18C /* VLTransformCanvasWidgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLTransformCanvasWidgetViewController.xib; sourceTree = "<group>"; };
 		AD11D00216CD85B60050D18C /* VLTransformCanvasWidgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTransformCanvasWidgetView.h; sourceTree = "<group>"; };
 		AD11D00316CD85B60050D18C /* VLTransformCanvasWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTransformCanvasWidgetView.m; sourceTree = "<group>"; };
+		AD16B3961722B33900042CC5 /* VLUniversalBlockDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLUniversalBlockDefinitions.h; sourceTree = "<group>"; };
+		AD16B3971722B33900042CC5 /* VLUniversalBlockDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLUniversalBlockDefinitions.m; sourceTree = "<group>"; };
+		AD2765B316D022FE0027A2A4 /* WidgetLibrary_v1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WidgetLibrary_v1.xml; sourceTree = "<group>"; };
+		AD2765B916D0253B0027A2A4 /* VLXMLTreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLXMLTreeManager.h; sourceTree = "<group>"; };
+		AD2765BA16D0253B0027A2A4 /* VLXMLTreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLXMLTreeManager.m; sourceTree = "<group>"; };
 		AD32E17C16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLInputWidgetPrototypeViewController.h; sourceTree = "<group>"; };
 		AD32E17D16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLInputWidgetPrototypeViewController.m; sourceTree = "<group>"; };
 		AD32E17E16CC71F100E830D3 /* VLInputWidgetPrototypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLInputWidgetPrototypeViewController.xib; sourceTree = "<group>"; };
 		AD32E18116CC768700E830D3 /* VLMyInputWidgetDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMyInputWidgetDataModel.h; sourceTree = "<group>"; };
 		AD32E18216CC768700E830D3 /* VLMyInputWidgetDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMyInputWidgetDataModel.m; sourceTree = "<group>"; };
 		AD38729B16CCA0BF001A1006 /* Transmit-256.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Transmit-256.icns"; sourceTree = "<group>"; };
+		AD78D5E616CED5AF002AADEB /* VLDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDatabaseManager.h; sourceTree = "<group>"; };
+		AD78D5E716CED5AF002AADEB /* VLDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDatabaseManager.m; sourceTree = "<group>"; };
 		AD8CB8EB16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTransformationWidgetsPanelViewController.h; sourceTree = "<group>"; };
 		AD8CB8EC16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTransformationWidgetsPanelViewController.m; sourceTree = "<group>"; };
 		AD8CB8ED16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLTransformationWidgetsPanelViewController.xib; sourceTree = "<group>"; };
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD78D5E916CEDCD3002AADEB /* CoreData.framework in Frameworks */,
 				ADE233CB16BC79C40034E15D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,8 +129,27 @@
 			isa = PBXGroup;
 			children = (
 				ADE233E516BC79C40034E15D /* VLDocument.xcdatamodeld */,
+				AD78D5E616CED5AF002AADEB /* VLDatabaseManager.h */,
+				AD78D5E716CED5AF002AADEB /* VLDatabaseManager.m */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		AD2765B216CF17050027A2A4 /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				AD2765B316D022FE0027A2A4 /* WidgetLibrary_v1.xml */,
+			);
+			name = templates;
+			sourceTree = "<group>";
+		};
+		AD2765B516D023BB0027A2A4 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				AD2765B916D0253B0027A2A4 /* VLXMLTreeManager.h */,
+				AD2765BA16D0253B0027A2A4 /* VLXMLTreeManager.m */,
+			);
+			name = Templates;
 			sourceTree = "<group>";
 		};
 		AD32E17616CC710D00E830D3 /* transformationwidgets */ = {
@@ -206,6 +238,9 @@
 		ADE233D016BC79C40034E15D /* Universal */ = {
 			isa = PBXGroup;
 			children = (
+				AD16B3961722B33900042CC5 /* VLUniversalBlockDefinitions.h */,
+				AD16B3971722B33900042CC5 /* VLUniversalBlockDefinitions.m */,
+				AD2765B516D023BB0027A2A4 /* Templates */,
 				AD11D00516CDC1770050D18C /* Database */,
 				AD8CB8EA16C0648E00D2EA5E /* Views */,
 				ADC25C7616BEB6CC00C1C98F /* Engine */,
@@ -224,6 +259,7 @@
 		ADE233D116BC79C40034E15D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD2765B216CF17050027A2A4 /* templates */,
 				AD38729A16CCA0A9001A1006 /* images */,
 				ADE233D216BC79C40034E15D /* Universal-Info.plist */,
 				ADE233D316BC79C40034E15D /* InfoPlist.strings */,
@@ -297,6 +333,7 @@
 				AD38729C16CCA0BF001A1006 /* Transmit-256.icns in Resources */,
 				AD11CFF516CCFF160050D18C /* VLTransformationCanvasViewController.xib in Resources */,
 				AD11D00116CD856B0050D18C /* VLTransformCanvasWidgetViewController.xib in Resources */,
+				AD2765B416D022FE0027A2A4 /* WidgetLibrary_v1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +358,9 @@
 				AD11CFFC16CD0ACB0050D18C /* VLCoreUtilitiesLib.m in Sources */,
 				AD11D00016CD856B0050D18C /* VLTransformCanvasWidgetViewController.m in Sources */,
 				AD11D00416CD85B60050D18C /* VLTransformCanvasWidgetView.m in Sources */,
+				AD78D5E816CED5AF002AADEB /* VLDatabaseManager.m in Sources */,
+				AD2765BB16D0253B0027A2A4 /* VLXMLTreeManager.m in Sources */,
+				AD16B3981722B33900042CC5 /* VLUniversalBlockDefinitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// define blocks -
-typedef void (^MyVarnerlabCodeGenerationOperationBlock)(void);
-typedef void (^MyVarnerlabCodeGenerationOperationCompletionBlock)(void);
-
 @interface VLCodeGenerationOperation : NSOperation
 {
     @private
