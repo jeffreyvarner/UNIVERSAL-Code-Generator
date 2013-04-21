@@ -8,6 +8,7 @@
 
 #import "VLTransformationCanvasView.h"
 #import "VLTransformationCanvasViewController.h"
+#import "VLTransformCanvasWidgetViewController.h"
 
 @interface VLTransformationCanvasView ()
 
@@ -100,16 +101,25 @@
     // Yes it did, note that we're starting to drag
     if (itemHit)
     {
-        // flag the instance variable that indicates
-        // a drag was actually started
-        _isDraggingWidget = YES;
-        
-        // store the starting click location;
-        _myLastDragLocation = clickLocation;
-        
-        // set the cursor to the closed hand cursor
-        // for the duration of the drag
-        [[NSCursor closedHandCursor] push];
+        // ok, so we selected an item -
+        // is this a control click?
+        if ([theEvent modifierFlags] & NSControlKeyMask)
+        {
+            
+        }
+        else
+        {
+            // flag the instance variable that indicates
+            // a drag was actually started (w/no control mask)
+            _isDraggingWidget = YES;
+            
+            // store the starting click location;
+            _myLastDragLocation = clickLocation;
+            
+            // set the cursor to the closed hand cursor
+            // for the duration of the drag
+            [[NSCursor closedHandCursor] push];
+        }
     }
 }
 

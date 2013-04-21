@@ -154,6 +154,37 @@
     return view;
 }
 
+-(VLTransformCanvasWidgetViewController *)widgetControllerForTransformationCanvas:(VLTransformationCanvasView *)canvasView
+                              atPosition:(NSPoint)point
+{
+    // initialize -
+    __block VLTransformCanvasWidgetViewController *mySelectedWidgetController = nil;
+    
+    // ok, let's iterate through and do a hit test on the widgets we have on the
+    // screen -
+    NSDictionary *cache = [self myWidgetCacheDictionary];
+    [cache enumerateKeysAndObjectsUsingBlock:^(NSIndexPath *indexPath,
+                                               VLTransformCanvasWidgetViewController *widgetController,
+                                               BOOL *stop){
+        
+        // get the frame for the controller -
+        NSRect myFrame = [[widgetController view] frame];
+        if (NSPointInRect(point, myFrame))
+        {
+            // ok, so we found a hit -
+            mySelectedWidgetController = widgetController;
+            
+            // stop -
+            *stop = YES;
+        }
+    }];
+    
+    
+    // return -
+    return mySelectedWidgetController;
+}
+
+
 -(NSView *)widgetForTransformationCanvas:(VLTransformationCanvasView *)canvasView
                               atPosition:(NSPoint)point
 {

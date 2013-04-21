@@ -25,7 +25,11 @@
 // drag and drop methods
 -(void)addTransformationWidgetViewControllerToCanvas:(id <NSDraggingInfo>)sender;
 -(NSInteger)numberOfWidgetsOnCanvas;
+
+// get widgets and widget controllers -
 -(NSView *)widgetForTransformationCanvas:(VLTransformationCanvasView *)canvasView
                               atPosition:(NSPoint)point;
+-(VLTransformCanvasWidgetViewController *)widgetControllerForTransformationCanvas:(VLTransformationCanvasView *)canvasView
+                                                                       atPosition:(NSPoint)point;
 
 @end

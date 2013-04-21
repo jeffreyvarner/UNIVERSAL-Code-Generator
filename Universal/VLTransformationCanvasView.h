@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class VLTransformationCanvasViewController;
+@class VLTransformCanvasWidgetViewController;
 
 @interface VLTransformationCanvasView : NSView
 {

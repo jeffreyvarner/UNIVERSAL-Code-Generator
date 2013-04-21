@@ -92,6 +92,7 @@
         title = @"Title";
     }
     
+    // return -
     return title;
 }
 
@@ -106,6 +107,7 @@
 {
     // Clean my iVars -
     self.myTitleLabel = nil;
+    self.myDomainWidgetNode = nil;
     
     // Remove me from the NSNotificationCenter -
     [[NSNotificationCenter defaultCenter] removeObserver:self];
