@@ -14,6 +14,9 @@
 -(void)setup;
 -(void)cleanMyMemory;
 
+// visual -
+-(NSString *)getMyWidgetTitle;
+
 // private props -
 @property (retain) IBOutlet NSTextField *myTitleLabel;
 
@@ -60,12 +63,36 @@
     [[[self view] layer] setBorderWidth:1.0f];
     [[[self view] layer] setBorderColor:[[NSColor blackColor] CGColor]];
     [[[self view] layer] setCornerRadius:5.0f];
+    
+    // do we have the widget node?
+    if ([self myDomainWidgetNode]!=nil)
+    {
+        NSString *title = [self getMyWidgetTitle];
+        [[self myTitleLabel] setStringValue:title];
+    }
 }
 
 -(void)dealloc
 {
     [self cleanMyMemory];
     [super dealloc];
+}
+
+#pragma mark - title
+-(NSString *)getMyWidgetTitle
+{
+    NSString *title = nil;
+    
+    // xpath -
+    NSArray *titleArray = [[self myDomainWidgetNode] nodesForXPath:@"./listOfWidgetProperties/property[@name='WIDGET_LABEL_TEXT']/@value" error:nil];
+    title = [[titleArray lastObject] stringValue];
+    
+    if (title==nil)
+    {
+        title = @"Title";
+    }
+    
+    return title;
 }
 
 
