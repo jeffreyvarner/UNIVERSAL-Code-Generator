@@ -42,7 +42,7 @@
     NSString *title = nil;
     
     // xpath -
-    NSArray *titleArray = [[self myWidgetNode] nodesForXPath:@"./@name" error:nil];
+    NSArray *titleArray = [[self myWidgetNode] nodesForXPath:@"./listOfWidgetProperties/property[@name='WIDGET_LABEL_TEXT']/@value" error:nil];
     title = [[titleArray lastObject] stringValue];
     
     return title;

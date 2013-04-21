@@ -116,7 +116,12 @@
 {
     
     [pasteboard declareTypes:[NSArray arrayWithObject:NSStringPboardType]  owner:self];
-    [pasteboard setString:@"Test data" forType:NSStringPboardType];
+    
+    // get the data -
+    NSUInteger selected_index = indexes.firstIndex;
+    NSXMLElement *node = [[[self myCollectionViewDataArray] objectAtIndex:selected_index] myWidgetNode];
+    NSString *node_text = [node description];
+    [pasteboard setString:node_text forType:NSStringPboardType];
     return YES;
 }
 

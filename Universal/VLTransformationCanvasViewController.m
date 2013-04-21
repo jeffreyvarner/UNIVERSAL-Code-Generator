@@ -128,6 +128,10 @@
     // build -
     widget = (VLTransformCanvasWidgetViewController *)[VLTransformCanvasWidgetViewController buildViewController];
     
+    // build the domain object -
+    NSXMLElement *newXMLNode = [[[NSXMLElement alloc] initWithXMLString:payload error:nil] autorelease];
+    [widget setMyDomainWidgetNode:newXMLNode];
+    
     // cache the view controller -
     
     // Get the number of widgets we have on screen -

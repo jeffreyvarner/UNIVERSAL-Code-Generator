@@ -14,9 +14,16 @@
 -(void)setup;
 -(void)cleanMyMemory;
 
+// private props -
+@property (retain) IBOutlet NSTextField *myTitleLabel;
+
 @end
 
 @implementation VLTransformCanvasWidgetViewController
+
+// synthesize -
+@synthesize myTitleLabel = _myTitleLabel;
+@synthesize myDomainWidgetNode = _myDomainWidgetNode;
 
 // Generic factory method -
 +(NSViewController *)buildViewController
@@ -71,7 +78,7 @@
 -(void)cleanMyMemory
 {
     // Clean my iVars -
-    
+    self.myTitleLabel = nil;
     
     // Remove me from the NSNotificationCenter -
     [[NSNotificationCenter defaultCenter] removeObserver:self];

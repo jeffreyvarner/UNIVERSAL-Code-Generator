@@ -5,7 +5,7 @@
 		<Widget name="READ_VFF">
 			<listOfWidgetProperties>
 				<property name="WIDGET_IMAGE" value=""/>
-				<property name="WIDGET_LABEL_TEXT" value=""/>
+				<property name="WIDGET_LABEL_TEXT" value="Load VFF"/>
 				<property name="WIDGET_INPUT_LABEL_TEXT" value=""/>
 				<property name="WIDGET_OUTPUT_LABEL_TEXT" value=""/>
 				<property name="WIDGET_TRANSFORMATION_CLASS" value=""/>
@@ -36,7 +36,7 @@
 		<Widget name="READ_SBML">	
 			<listOfWidgetProperties>
 				<property name="WIDGET_IMAGE" value=""/>
-				<property name="WIDGET_LABEL_TEXT" value=""/>
+				<property name="WIDGET_LABEL_TEXT" value="Load SBML"/>
 				<property name="WIDGET_INPUT_LABEL_TEXT" value=""/>
 				<property name="WIDGET_OUTPUT_LABEL_TEXT" value=""/>
 				<property name="WIDGET_TRANSFORMATION_CLASS" value=""/>

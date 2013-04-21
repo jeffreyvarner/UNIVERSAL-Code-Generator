@@ -10,8 +10,13 @@
 
 @interface VLTransformCanvasWidgetViewController : NSViewController
 {
-    
+    @private
+    NSTextField *_myTitleLabel;
+    NSXMLElement *_myDomainWidgetNode;
 }
+
+// public -
+@property (retain) NSXMLElement *myDomainWidgetNode;
 
 // Factory method
 +(NSViewController *)buildViewController;
