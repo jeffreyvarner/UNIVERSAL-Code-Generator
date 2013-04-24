@@ -9,6 +9,7 @@
 #import "VLTransformationCanvasViewController.h"
 #import "VLTransformationCanvasView.h"
 #import "VLTransformCanvasWidgetViewController.h"
+#import "VLTransformationWrapper.h"
 
 #define MAX_NUMBER_OF_WIDGETS 200
 
@@ -27,6 +28,7 @@
 // properties -
 @property (retain) NSMutableArray *myIndexPathArray;
 @property (retain) NSMutableDictionary *myWidgetCacheDictionary;
+@property (retain) NSMutableArray *myWidgetConnectionViewControllerArray;
 
 @end
 
@@ -35,6 +37,7 @@
 // synthesize -
 @synthesize myIndexPathArray = _myIndexPathArray;
 @synthesize myWidgetCacheDictionary = _myWidgetCacheDictionary;
+@synthesize myWidgetConnectionViewControllerArray = _myWidgetConnectionViewControllerArray;
 
 // Generic factory method -
 +(NSViewController *)buildViewController
@@ -218,6 +221,54 @@
     return myWidgetView;
 }
 
+-(void)buildConnectionBetweenCanvasWidgetsAtInitialPoint:(NSPoint)startPoint
+                                           andFinalPoint:(NSPoint)finalPoint
+                                           inCanvasView:(VLTransformationCanvasView *)view
+{
+    // get the two view controllers -
+    VLTransformCanvasWidgetViewController *firstController = [self widgetControllerForTransformationCanvas:view
+                                                                                                atPosition:startPoint];
+    
+    VLTransformCanvasWidgetViewController *secondController = [self widgetControllerForTransformationCanvas:view
+                                                                                                 atPosition:finalPoint];
+    
+    if (firstController!= secondController)
+    {
+        BOOL shouldMakeNewConnection = YES;
+        
+        // ok, so we have unique controllers. Do we already have a connetion between these controllers?
+        for (VLTransformationWrapper *wrapper in [self myWidgetConnectionViewControllerArray])
+        {
+            BOOL test_flag = [wrapper doesContainController:firstController
+                                              andController:secondController];
+            
+            if (test_flag == YES)
+            {
+                shouldMakeNewConnection = NO;
+                break;
+            }
+        }
+        
+        if (shouldMakeNewConnection == YES)
+        {
+            // build the connection wrapper -
+            VLTransformationWrapper *wrapper = [[VLTransformationWrapper alloc] initVLTransformationWrapperWithFirstWidgetController:firstController
+                                                                                                           andSecondWidgetController:secondController];
+            
+            // cache -
+            [[self myWidgetConnectionViewControllerArray] addObject:wrapper];
+            
+            // release -
+            [wrapper release];
+        }
+    }
+}
+
+-(NSArray *)getCurrentListOfTransformations
+{
+    return [NSArray arrayWithArray:[self myWidgetConnectionViewControllerArray]];
+}
+
 #pragma mark - private lifecycle
 -(void)setup
 {
@@ -239,6 +290,12 @@
         self.myWidgetCacheDictionary = [NSMutableDictionary dictionary];
     }
     
+    // build up my list of connections -
+    if ([self myWidgetConnectionViewControllerArray] == nil)
+    {
+        self.myWidgetConnectionViewControllerArray = [NSMutableArray array];
+    }
+    
     // setup the drop block -
     [self setupDragAndDropBlockForTransformationView];
 }
@@ -246,7 +303,8 @@
 -(void)cleanMyMemory
 {
     // Clean my iVars -
-    
+    [[self myWidgetConnectionViewControllerArray] removeAllObjects];
+    self.myWidgetConnectionViewControllerArray = nil;
     
     // Remove me from the NSNotificationCenter -
     [[NSNotificationCenter defaultCenter] removeObserver:self];

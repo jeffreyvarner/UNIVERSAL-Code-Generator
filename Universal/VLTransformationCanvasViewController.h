@@ -10,13 +10,14 @@
 
 @class VLTransformationCanvasView;
 @class VLTransformCanvasWidgetViewController;
-
+@class VLTransformationWrapper;
 
 @interface VLTransformationCanvasViewController : NSViewController
 {
     @private
     NSMutableArray *_myIndexPathArray;
     NSMutableDictionary *_myWidgetCacheDictionary;
+    NSMutableArray *_myWidgetConnectionViewControllerArray;
 }
 
 // Factory method
@@ -31,5 +32,11 @@
                               atPosition:(NSPoint)point;
 -(VLTransformCanvasWidgetViewController *)widgetControllerForTransformationCanvas:(VLTransformationCanvasView *)canvasView
                                                                        atPosition:(NSPoint)point;
+
+-(void)buildConnectionBetweenCanvasWidgetsAtInitialPoint:(NSPoint)startPoint
+                                           andFinalPoint:(NSPoint)finalPoint
+                                            inCanvasView:(VLTransformationCanvasView *)view;
+
+-(NSArray *)getCurrentListOfTransformations;
 
 @end
