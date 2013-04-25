@@ -11,8 +11,9 @@
 @class VLTransformationWidgetsPanelViewController;
 @class VLUniversalConsoleViewController;
 @class VLTransformationCanvasViewController;
+@class VLWidgetPropertiesEditorWindowController;
 
-@interface VLDocument : NSPersistentDocument<NSSplitViewDelegate>
+@interface VLDocument : NSPersistentDocument<NSSplitViewDelegate,NSWindowDelegate>
 {
     @private
     NSSegmentedControl *_mySegmentedControl;
@@ -27,6 +28,7 @@
     VLTransformationWidgetsPanelViewController *_myWidgetPanelViewController;
     VLUniversalConsoleViewController *_myConsolePanelViewController;
     VLTransformationCanvasViewController *_myTransformationCanvasViewController;
+    VLWidgetPropertiesEditorWindowController *_myWidgetPropertiesWindowController;
     
     // initialize -
     BOOL _didFinishInitializing;

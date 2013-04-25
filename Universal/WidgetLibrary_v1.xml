@@ -32,6 +32,35 @@
 				</listOfOutputPartners>
 			</listOfTransformationPartners>
 		</Widget>
+        
+        <Widget name="WRITE_SBML">
+			<listOfWidgetProperties>
+				<property name="WIDGET_IMAGE" value=""/>
+				<property name="WIDGET_LABEL_TEXT" value="Write SBML"/>
+				<property name="WIDGET_INPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_OUTPUT_LABEL_TEXT" value=""/>
+				<property name="WIDGET_TRANSFORMATION_CLASS" value=""/>
+			</listOfWidgetProperties>
+			
+			<listOfTransformationProperties>
+				<TransformationProperty name="PATH">
+					<property name="TRANSFORMATION_PROPERTY_CELL_LABEL_TEXT" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_IMAGE" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_CLASS" value=""/>
+					<property name="TRANSFORMATION_PROPERTY_CELL_DEFAULT_VALUE" value=""/>
+				</TransformationProperty>
+			</listOfTransformationProperties>
+			
+			<listOfTransformationPartners>
+				<listOfInputPartners>
+				</listOfInputPartners>
+				
+				<listOfOutputPartners>
+					<WidgetReference name="LOAD_VFF"/>
+					<WidgetReference name="LOAD_SBML"/>
+				</listOfOutputPartners>
+			</listOfTransformationPartners>
+		</Widget>
 		
 		<Widget name="READ_SBML">	
 			<listOfWidgetProperties>
@@ -79,9 +108,7 @@
 					<WidgetReference name="WRITE_MASSACTIONKINTICS_SUNDIALS_C"/>
 					
 				</listOfOutputPartners>
-				
 			</listOfTransformationPartners>
-			
 		</Widget>
 		
 	</listOfWidgets>

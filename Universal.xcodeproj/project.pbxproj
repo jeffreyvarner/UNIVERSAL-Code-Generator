@@ -26,6 +26,8 @@
 		AD8CB8EE16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8CB8EC16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.m */; };
 		AD8CB8EF16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8CB8ED16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib */; };
 		ADAA2C8F172873B900247E81 /* VLTransformationWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2C8E172873B900247E81 /* VLTransformationWrapper.m */; };
+		ADAA2C9417293F2200247E81 /* VLWidgetPropertiesEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2C9217293F2200247E81 /* VLWidgetPropertiesEditorWindowController.m */; };
+		ADAA2C9517293F2200247E81 /* VLWidgetPropertiesEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAA2C9317293F2200247E81 /* VLWidgetPropertiesEditorWindowController.xib */; };
 		ADAFEEFC16CC3C74008E2C19 /* VLUniversalConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAFEEFA16CC3C74008E2C19 /* VLUniversalConsoleViewController.m */; };
 		ADAFEEFD16CC3C74008E2C19 /* VLUniversalConsoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADAFEEFB16CC3C74008E2C19 /* VLUniversalConsoleViewController.xib */; };
 		ADC25C7916BEB74D00C1C98F /* VLCodeGenerationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC25C7816BEB74D00C1C98F /* VLCodeGenerationEngine.m */; };
@@ -72,6 +74,9 @@
 		AD8CB8ED16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLTransformationWidgetsPanelViewController.xib; sourceTree = "<group>"; };
 		ADAA2C8D172873B900247E81 /* VLTransformationWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTransformationWrapper.h; sourceTree = "<group>"; };
 		ADAA2C8E172873B900247E81 /* VLTransformationWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTransformationWrapper.m; sourceTree = "<group>"; };
+		ADAA2C9117293F2200247E81 /* VLWidgetPropertiesEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLWidgetPropertiesEditorWindowController.h; sourceTree = "<group>"; };
+		ADAA2C9217293F2200247E81 /* VLWidgetPropertiesEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLWidgetPropertiesEditorWindowController.m; sourceTree = "<group>"; };
+		ADAA2C9317293F2200247E81 /* VLWidgetPropertiesEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLWidgetPropertiesEditorWindowController.xib; sourceTree = "<group>"; };
 		ADAFEEF916CC3C74008E2C19 /* VLUniversalConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLUniversalConsoleViewController.h; sourceTree = "<group>"; };
 		ADAFEEFA16CC3C74008E2C19 /* VLUniversalConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLUniversalConsoleViewController.m; sourceTree = "<group>"; };
 		ADAFEEFB16CC3C74008E2C19 /* VLUniversalConsoleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VLUniversalConsoleViewController.xib; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 		AD8CB8EA16C0648E00D2EA5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ADAA2C9017293EDA00247E81 /* transformationwidgetproperties */,
 				AD11CFF616CCFF410050D18C /* transformationcanvas */,
 				AD32E17616CC710D00E830D3 /* transformationwidgets */,
 				AD8CB8EB16C0651A00D2EA5E /* VLTransformationWidgetsPanelViewController.h */,
@@ -190,6 +196,16 @@
 				ADAFEEFB16CC3C74008E2C19 /* VLUniversalConsoleViewController.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		ADAA2C9017293EDA00247E81 /* transformationwidgetproperties */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA2C9117293F2200247E81 /* VLWidgetPropertiesEditorWindowController.h */,
+				ADAA2C9217293F2200247E81 /* VLWidgetPropertiesEditorWindowController.m */,
+				ADAA2C9317293F2200247E81 /* VLWidgetPropertiesEditorWindowController.xib */,
+			);
+			name = transformationwidgetproperties;
 			sourceTree = "<group>";
 		};
 		ADC25C7616BEB6CC00C1C98F /* Engine */ = {
@@ -339,6 +355,7 @@
 				AD11CFF516CCFF160050D18C /* VLTransformationCanvasViewController.xib in Resources */,
 				AD11D00116CD856B0050D18C /* VLTransformCanvasWidgetViewController.xib in Resources */,
 				AD2765B416D022FE0027A2A4 /* WidgetLibrary_v1.xml in Resources */,
+				ADAA2C9517293F2200247E81 /* VLWidgetPropertiesEditorWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +384,7 @@
 				AD2765BB16D0253B0027A2A4 /* VLXMLTreeManager.m in Sources */,
 				AD16B3981722B33900042CC5 /* VLUniversalBlockDefinitions.m in Sources */,
 				ADAA2C8F172873B900247E81 /* VLTransformationWrapper.m in Sources */,
+				ADAA2C9417293F2200247E81 /* VLWidgetPropertiesEditorWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

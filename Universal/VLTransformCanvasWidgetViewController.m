@@ -78,6 +78,17 @@
     [super dealloc];
 }
 
+#pragma mark - callback methods
+-(void)myTransformCanvasWidgetWasDoubleTapped
+{
+    // ok, so when this get's called, we want to launch the properties for this widget
+    
+    // post a notification w/the tree node
+    NSNotification *myNotification = [NSNotification notificationWithName:VLUniversalTransformWidgetPropertiesWindowWasRequestedNotification
+                                                                   object:[self myDomainWidgetNode]];
+    [[NSNotificationCenter defaultCenter] postNotification:myNotification];
+}
+
 #pragma mark - title
 -(NSString *)getMyWidgetTitle
 {

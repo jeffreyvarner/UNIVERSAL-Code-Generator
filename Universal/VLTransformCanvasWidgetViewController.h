@@ -23,5 +23,8 @@
 // Factory method
 +(NSViewController *)buildViewController;
 
+// methods
+-(void)myTransformCanvasWidgetWasDoubleTapped;
+
 
 @end

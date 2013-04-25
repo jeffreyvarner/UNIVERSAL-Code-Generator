@@ -10,6 +10,7 @@
 #import "VLTransformationWidgetsPanelViewController.h"
 #import "VLUniversalConsoleViewController.h"
 #import "VLTransformationCanvasViewController.h"
+#import "VLWidgetPropertiesEditorWindowController.h"
 
 // offset
 #define LEFT_OFFSET 20.0f
@@ -32,6 +33,7 @@
 @property (retain) VLTransformationWidgetsPanelViewController *myWidgetPanelViewController;
 @property (retain) VLUniversalConsoleViewController *myConsolePanelViewController;
 @property (retain) VLTransformationCanvasViewController *myTransformationCanvasViewController;
+@property (retain) VLWidgetPropertiesEditorWindowController *myWidgetPropertiesWindowController;
 
 // services -
 -(void)setupMyServices;
@@ -50,6 +52,9 @@
 -(NSView *)buildTransformationConsoleViewController;
 -(NSView *)buildTransformationWidgetViewController;
 -(NSView *)buildTransformationCanvasViewController;
+
+// notifications
+-(void)handleMyVLUniversalTransformWidgetPropertiesWindowWasRequestedNotification:(NSNotification *)notification;
 
 // private lifecycle methods
 -(void)setup;
@@ -70,6 +75,7 @@
 @synthesize myLeftPanelView = _myLeftPanelView;
 @synthesize myMainPanelView = _myMainPanelView;
 @synthesize myTransformationCanvasViewController = _myTransformationCanvasViewController;
+@synthesize myWidgetPropertiesWindowController = _myWidgetPropertiesWindowController;
 
 - (id)init
 {
@@ -534,11 +540,54 @@
 
 }
 
+#pragma mark - notifications
+-(void)handleMyVLUniversalTransformWidgetPropertiesWindowWasRequestedNotification:(NSNotification *)notification
+{
+    
+    if ([self myWidgetPropertiesWindowController] == nil)
+    {
+        // Fire up the palette window controller -
+        VLWidgetPropertiesEditorWindowController *controller = (VLWidgetPropertiesEditorWindowController *)[VLWidgetPropertiesEditorWindowController buildWindowController];
+        
+        // add myself as the delegate -
+        [[controller window] setDelegate:self];
+        
+        // Add this to the main window?
+        [self addWindowController:controller];
+        
+        // Fire up the window -
+        NSWindow *tmpMyPaletteWindow = [controller window];
+        [tmpMyPaletteWindow makeKeyAndOrderFront:self];
+        
+        // grab the controller -
+        self.myWidgetPropertiesWindowController = controller;
+        
+        // release the controller -
+        [controller release];
+    }
+}
+
+#pragma mark - window delegate methods
+- (void)windowWillClose:(NSNotification *)notification
+{
+    // remove me as a delegate from the window -
+    //[[[self myWidgetPropertiesWindowController] window] setDelegate:nil];
+    
+    // Kill the palette window controller -
+    self.myWidgetPropertiesWindowController = nil;
+}
+
 #pragma mark - services
 -(void)setupMyServices
 {
     // build the tree manager -
     [VLXMLTreeManager sharedManager];
+    
+    // ok, so we want to listen for a few notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleMyVLUniversalTransformWidgetPropertiesWindowWasRequestedNotification:)
+                                                 name:VLUniversalTransformWidgetPropertiesWindowWasRequestedNotification
+                                               object:nil];
 }
 
 #pragma mark - setup controls
@@ -598,6 +647,7 @@
     self.myLeftPanelView = nil;
     self.myBottomPanelView = nil;
     self.myTransformationCanvasViewController = nil;
+    self.myWidgetPropertiesWindowController = nil;
     
     // Remove me from the NSNotificationCenter -
     [[NSNotificationCenter defaultCenter] removeObserver:self];

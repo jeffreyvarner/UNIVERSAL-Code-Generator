@@ -8,6 +8,8 @@
 
 #import "VLUniversalBlockDefinitions.h"
 
+// notifications
+NSString *const VLUniversalTransformWidgetPropertiesWindowWasRequestedNotification = @"VLUniversalTransformWidgetPropertiesWindowWasRequestedNotification";
 
 // keys -
 NSString *const kVLDefaultTransformationWidgetTree = @"kVLDefaultTransformationWidgetTree";

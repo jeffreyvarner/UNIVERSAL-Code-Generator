@@ -13,6 +13,8 @@
 typedef void (^MyVarnerlabCodeGenerationOperationBlock)(void);
 typedef void (^MyVarnerlabCodeGenerationOperationCompletionBlock)(void);
 
+// notifications -
+FOUNDATION_EXPORT NSString *const VLUniversalTransformWidgetPropertiesWindowWasRequestedNotification;
 
 // keys -
 FOUNDATION_EXPORT NSString *const kVLDefaultTransformationWidgetTree;

@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class VLTransformCanvasWidgetViewController;
+
 @interface VLTransformCanvasWidgetView : NSView
+{
+    
+}
+
+
 
 @end
